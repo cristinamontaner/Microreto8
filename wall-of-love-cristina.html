@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wall of Love - Cristina [CMR]</title>
+  <style>
+    :root {
+      --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-text: #28251d; --color-primary: #01696f;
+      --color-primary-highlight: #cedcd8; --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+      --text-base: clamp(1rem, 2vw, 1.125rem); --space-4: 1rem; --space-6: 1.5rem; --radius-md: 0.5rem;
+    }
+    [data-theme="dark"] { --color-bg: #171614; --color-surface: #1c1b19; --color-text: #cdccca; --color-primary: #4f98a3; --shadow-sm: 0 1px 2px rgba(0,0,0,0.2); }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: var(--color-bg); color: var(--color-text); line-height: 1.6; padding: var(--space-6); max-width: 1200px; margin: auto; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); text-align: center; margin-bottom: var(--space-6); color: var(--color-primary); }
+    .filters { display: flex; gap: var(--space-4); justify-content: center; margin-bottom: var(--space-6); flex-wrap: wrap; }
+    .filter { padding: 0.5rem 1rem; background: var(--color-surface); border: 1px solid transparent; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s; }
+    .filter.active, .filter:hover { background: var(--color-primary); color: white; border-color: var(--color-primary); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-6); }
+    .card { background: var(--color-surface); padding: var(--space-6); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); transition: all 0.3s; opacity: 1; transform: translateY(0); }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(1,105,111,0.15); }
+    .card.top { background: var(--color-primary-highlight); transform: scale(1.05); }
+    .stars { color: #d19900; font-size: 1.2em; margin-bottom: 0.5rem; }
+    .name { font-weight: bold; font-size: 1.2em; margin-bottom: 0.25rem; }
+    .role { color: var(--color-primary); font-size: 0.95em; margin-bottom: 0.5rem; }
+    .source { font-size: 0.85em; color: #7a7974; }
+    .category { font-size: 0.8em; background: var(--color-primary); color: white; padding: 0.25rem 0.5rem; border-radius: 999px; margin-top: 1rem; }
+    .hidden { opacity: 0; transform: translateY(20px); display: none; }
+    @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <h1>Wall of Love ⭐</h1>
+  <p style="text-align: center; max-width: 60ch; margin: 0 auto 2rem;">Testimonios reales de clientes satisfechos. ¡Gracias por la confianza!</p>
+
+  <div class="filters">
+    <button class="filter active" data-filter="all">Todos</button>
+    <button class="filter" data-filter="rapidez">Rapidez</button>
+    <button class="filter" data-filter="profesional">Profesional</button>
+    <button class="filter" data-filter="comunicacion">Comunicación</button>
+    <button class="filter" data-filter="recomendacion">Recomendación</button>
+  </div>
+
+  <div class="grid">
+    <!-- Top 5 primero -->
+    <div class="card top" data-category="profesional">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <div class="name">bfsanfernando</div>
+      <div class="role">Cliente Fiverr</div>
+      <p>"Era la primera vez que trabajábamos juntos. La contraté para poner al día mi contabilidad por un pico de trabajo y fue capaz de ponerse al día inmediatamente. Muy atenta a los detalles y se quedó más tiempo del acordado para terminar la tarea."</p>
+      <div class="source">Fiverr, 2 semanas ago</div>
+      <div class="category">Profesionalismo</div>
+    </div>
+
+    <div class="card top" data-category="profesional">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <div class="name">dase_es (Repeat Client)</div>
+      <div class="role">Cliente Fiverr</div>
+      <p>"Llevamos 3 meses contando con Cristina y es una gran profesional: atenta, proactiva, educada… Delegar según que tareas da vértigo y siento que con ella hemos acertado. Muy recomendable!"</p>
+      <div class="source">Fiverr, 2 months ago</div>
+      <div class="category">Profesionalismo</div>
+    </div>
+
+    <div class="card top" data-category="profesional">
+      <div class="name">Antonio Carrere García</div>
+      <div class="role">Freelance SAP Consultant, Palmera Solutions</div>
+      <p>"Cristina es una gran profesional. Destacaría de ella el compromiso y dedicación que pone para que las cosas salgan bien y su buena comunicación y empatía con los compañeros."</p>
+      <div class="source">LinkedIn, Feb 2024</div>
+      <div class="category">Profesionalismo</div>
+    </div>
+
+    <div class="card top" data-category="profesional">
+      <div class="name">Beatriz Díaz Rubia</div>
+      <div class="role">Responsable Fondos Europeos, Confederación Hidrográfica</div>
+      <p>"Cristina es una persona muy trabajadora y profesional. Tiene un amplio conocimiento de su área. Es un placer trabajar con ella, siempre está dispuesta a ayudar y asume tus problemas como suyos."</p>
+      <div class="source">LinkedIn, Ene 2020</div>
+      <div class="category">Profesionalismo</div>
+    </div>
+
+    <div class="card top" data-category="rapidez">
+      <div class="name">Marta López Paloma</div>
+      <div class="role">Central de Cox Energy</div>
+      <p>"Cristina aportó sus acertadas dotes organizativas. Constante e incansable, nunca se dejó vencer por la adversidad y encontraba soluciones creativas."</p>
+      <div class="source">LinkedIn, Dic 2019</div>
+      <div class="category">Rapidez</div>
+    </div>
+
+    <!-- Resto de cards igual que antes -->
+    <div class="card" data-category="rapidez">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <div class="name">V</div>
+      <div class="role">viajarmxico</div>
+      <p>"Ha entendido a la perfección lo que necesitaba. La comunicación ha sido excelente. Sin duda volveré a trabajar con ella."</p>
+      <div class="source">Fiverr, 3 months ago</div>
+      <div class="category">Rapidez</div>
+    </div>
+
+    <div class="card" data-category="rapidez">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <div class="name">I</div>
+      <div class="role">ireneverdu</div>
+      <p>"Fue un acierto trabajar con Cristina. Me explicó cómo resolver mis dudas con el Excel, entrega rapidísima y contacto constante para ajustar 100%."</p>
+      <div class="source">Fiverr, 9 months ago</div>
+      <div class="category">Rapidez</div>
+    </div>
+
+    <div class="card" data-category="comunicacion">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <div class="name">M</div>
+      <div class="role">montserratgil</div>
+      <p>"¡Increíble servicio! Proporcionó información clara y detallada, siempre atenta a mis necesidades."</p>
+      <div class="source">Fiverr, 1 year ago</div>
+      <div class="category">Comunicación</div>
+    </div>
+
+    <div class="card" data-category="recomendacion">
+      <div class="name">Alfredo Sanz Cruz</div>
+      <div class="role">Responsable Soporte Aplicaciones</div>
+      <p>"Persona muy responsable, confiable y competente. No tengo ningún inconveniente en recomendarla."</p>
+      <div class="source">LinkedIn, Oct 2020</div>
+      <div class="category">Recomendación</div>
+    </div>
+
+    <div class="card" data-category="profesional">
+      <div class="name">Carmen Ochoa Sanchez</div>
+      <div class="role">Abogado, Legal Firmas</div>
+      <p>"Tenaz, resolutiva y muy comprometida. Leal, discreta y eficiente."</p>
+      <div class="source">LinkedIn, Ago 2020</div>
+      <div class="category">Profesionalismo</div>
+    </div>
+
+    <div class="card" data-category="rapidez">
+      <div class="name">José Ibáñez</div>
+      <div class="role">Community Manager</div>
+      <p>"Destacó por su entusiasmo por aprender. Consistente, puntual, con gran capacidad de esfuerzo."</p>
+      <div class="source">LinkedIn, Dic 2019</div>
+      <div class="category">Rapidez</div>
+    </div>
+
+    <div class="card" data-category="profesional">
+      <div class="name">Ismael Olmedo Patricio</div>
+      <div class="role">SAP S/4HANA Consultant</div>
+      <p>"Muy responsable, trabajadora y competente. Mi experiencia con ella fue muy positiva."</p>
+      <div class="source">LinkedIn, Dic 2019</div>
+      <div class="category">Profesionalismo</div>
+    </div>
+
+    <div class="card" data-category="rapidez">
+      <div class="name">Segismundo Colomer Hernández</div>
+      <div class="role">Consultor Económico-Financiero</div>
+      <p>"Cristina es una tenaz compañera, con permanente afán de mejora y gran capacidad de trabajo."</p>
+      <div class="source">LinkedIn, Dic 2019</div>
+      <div class="category">Rapidez</div>
+    </div>
+  </div>
+
+  <script>
+    const filters = document.querySelectorAll('.filter');
+    const cards = document.querySelectorAll('.card');
+
+    filters.forEach(filter => {
+      filter.addEventListener('click', () => {
+        filters.forEach(f => f.classList.remove('active'));
+        filter.classList.add('active');
+        const cat = filter.dataset.filter;
+        cards.forEach(card => {
+          if (cat === 'all' || card.dataset.category === cat) {
+            card.classList.remove('hidden');
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
